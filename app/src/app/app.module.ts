@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { GamesComponent } from './components/game/games/games.component';
+import { AuthGuard } from './guards/auth-guard.service';
+import { RefuseLoggedInGuard } from './guards/refuse-logged-in.guard';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -18,7 +21,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
+  providers: [AuthGuard, RefuseLoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
