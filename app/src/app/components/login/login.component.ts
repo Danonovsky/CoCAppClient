@@ -26,12 +26,12 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.userService.login(this.user).subscribe(value => {
       if(value.status == 200) {
-        this.userService.isLoggedIn = true;
+        var token = value.body!.token.toString();
+        localStorage.setItem("jwt",token);
       }
     },
     err => {
       this.warning = "Ble";
     });
   }
-
 }

@@ -12,4 +12,9 @@ export class AppComponent {
   ) { }
 
   title = 'app';
+
+  logout(): void {
+    localStorage.removeItem("jwt");
+    console.log("logged out");
+  }
 }

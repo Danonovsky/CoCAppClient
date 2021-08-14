@@ -11,21 +11,18 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mw-auto mb-2 mb-lg-0" *ngIf="!this.userService.isLoggedIn">
+      <ul class="navbar-nav mw-auto mb-2 mb-lg-0" *ngIf="!this.userService.isLoggedIn()">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Log In</a>
+          <a class="nav-link" routerLink="sign-up">Sign up</a>
         </li>
-        <li>
-          <a class="nav-link" routerLink="/sign-up">Sign up</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Log In</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav mw-auto mb-2 mb-lg-0" *ngIf="this.userService.isLoggedIn">
+      <ul class="navbar-nav mw-auto mb-2 mb-lg-0" *ngIf="this.userService.isLoggedIn()">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Log Out</a>
-        </li>
-        <li>
-          <a class="nav-link" routerLink="/sign-up">Sign up</a>
+          <a class="nav-link" routerLink="login" (click)="logout()">Log Out</a>
         </li>
       </ul>
     </div>

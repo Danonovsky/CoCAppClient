@@ -13,7 +13,7 @@ import { catchError } from 'rxjs/operators';
 export class UserService {
   private url="http://localhost:5000/user/"
 
-  isLoggedIn = false;
+  //isLoggedIn = false;
 
   constructor(
     private http: HttpClient
@@ -25,5 +25,9 @@ export class UserService {
 
   register(user: RegisterRequest): Observable<HttpResponse<Object>> {
     return this.http.post(this.url+"register",user, { observe: 'response'});
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem("jwt");
   }
 }
