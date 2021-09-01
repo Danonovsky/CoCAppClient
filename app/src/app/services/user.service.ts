@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { User } from '../models/user/user';
 import { UserRequest } from '../models/user/login/userRequest';
 import { UserResponse } from '../models/user/login/userResponse';
 import { RegisterRequest } from '../models/user/register/registerRequest';
