@@ -12,6 +12,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { GamesComponent } from './components/game/games/games.component';
 import { AuthGuard } from './guards/auth-guard.service';
 import { RefuseLoggedInGuard } from './guards/refuse-logged-in.guard';
+import { CreateGameComponent } from './components/game/create/create-game.component';
+import { GameComponent } from './components/game/game/game.component';
+import { ViewComponent } from './components/game/view/view.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -22,7 +25,10 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    GamesComponent
+    GamesComponent,
+    CreateGameComponent,
+    GameComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

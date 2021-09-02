@@ -5,11 +5,13 @@ import { GamesComponent } from './components/game/games/games.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RefuseLoggedInGuard } from './guards/refuse-logged-in.guard';
+import { CreateGameComponent } from './components/game/create/create-game.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [RefuseLoggedInGuard] },
   { path: "sign-up", component: SignUpComponent, canActivate: [RefuseLoggedInGuard] },
-  { path: "games", component: GamesComponent, canActivate: [AuthGuard] }
+  { path: "games", component: GamesComponent, canActivate: [AuthGuard] },
+  { path: "games/create", component: CreateGameComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

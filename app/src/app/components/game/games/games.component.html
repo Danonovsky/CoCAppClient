@@ -1,9 +1,12 @@
-<p>games works!</p>
+<div class="container">
+    <a routerLink="create" class="btn btn-outline-dark col-12 mt-4 mb-4">
+        Create new game!
+    </a>
+
+    <app-game *ngFor="let game of games" [game]="game"></app-game>
 
 <h2>Todo</h2>
 <ul>
-    <li>Games list</li>
-    <li>Game creating</li>
     <li>Game joining</li>
     <li>Game editing</li>
     <li>Game deleting</li>
@@ -17,3 +20,4 @@
         </ul>
     </li>
 </ul>
+</div>

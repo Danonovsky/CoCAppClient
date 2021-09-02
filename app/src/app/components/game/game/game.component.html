@@ -1,0 +1,8 @@
+<div class="card bg-dark mt-4 mb-4" *ngIf="game">
+    <div class="card-body">
+        <h5 class="card-title">{{game.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{game.user.nickname}}</h6>
+        
+        <p><a class="card-link" routerLink="view/{{game.id}}">View Game</a></p>
+    </div>
+</div>
