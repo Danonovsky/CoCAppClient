@@ -34,4 +34,8 @@ export class CreateGameComponent implements OnInit {
     })
   }
 
+  changePrivacy(value: Boolean): void {
+    this.game.private = value
+  }
+
 }

@@ -15,6 +15,8 @@ import { RefuseLoggedInGuard } from './guards/refuse-logged-in.guard';
 import { CreateGameComponent } from './components/game/create/create-game.component';
 import { GameComponent } from './components/game/game/game.component';
 import { ViewComponent } from './components/game/view/view.component';
+import { JoinedGamesComponent } from './components/game/joined-games/joined-games.component';
+import { UserGamesComponent } from './components/game/user-games/user-games.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -28,7 +30,9 @@ export function tokenGetter() {
     GamesComponent,
     CreateGameComponent,
     GameComponent,
-    ViewComponent
+    ViewComponent,
+    JoinedGamesComponent,
+    UserGamesComponent
   ],
   imports: [
     BrowserModule,
