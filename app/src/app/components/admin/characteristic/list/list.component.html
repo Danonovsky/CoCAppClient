@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Default Characteristics</h2>
+    <a routerLink="add" class="btn btn-outline-dark col-12 mt-4 mb-4">
+        Add
+    </a>
+    <table class="table table-responsive table-striped table-dark text-center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of list">
+                <td>{{item.name}}</td>
+                <td>{{item.value}}</td>
+                <td><a routerLink="details/{{item.id}}" class="btn btn-outline-info">Details</a></td>
+                <td><a routerLink="edit/{{item.id}}" class="btn btn-outline-warning">Edit</a></td>
+                <td><a routerLink="delete/{{item.id}}" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { GameResponse } from 'src/app/models/game/gameResponse';
 import { GameService } from 'src/app/services/game.service';
 
@@ -13,7 +14,8 @@ export class ViewComponent implements OnInit {
   constructor(
     private gameService: GameService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -23,11 +25,13 @@ export class ViewComponent implements OnInit {
 
   getGame(): void {
     const id = this.route.snapshot.paramMap.get("id");
-    if(id == null) this.router.navigate(['/games']);
+    if(id == null) {
+      this.toastr.error('No game found with given ID.');
+      this.router.navigate(['/games']);
+    }
     this.gameService.get(id!).subscribe(success => {
       console.log(success.body);
     }, error => {
-      console.log("Error");
       this.router.navigate(['/games']);
     });
   }
@@ -35,9 +39,9 @@ export class ViewComponent implements OnInit {
   join(): void {
     const id = this.route.snapshot.paramMap.get("id");
     this.gameService.join(id!).subscribe(success => {
-      console.log(success);
+      this.toastr.success('Successfully joined a game.');
     }, error => {
-      console.log(error);
+      this.toastr.error('An error occured.');
     })
   }
 

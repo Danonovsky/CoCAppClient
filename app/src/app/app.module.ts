@@ -19,6 +19,8 @@ import { GameComponent } from './components/game/game/game.component';
 import { ViewComponent } from './components/game/view/view.component';
 import { JoinedGamesComponent } from './components/game/joined-games/joined-games.component';
 import { UserGamesComponent } from './components/game/user-games/user-games.component';
+import { ListComponent } from './components/admin/characteristic/list/list.component';
+import { AddCharacteristicComponent } from './components/admin/characteristic/add-characteristic/add-characteristic.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -34,7 +36,9 @@ export function tokenGetter() {
     GameComponent,
     ViewComponent,
     JoinedGamesComponent,
-    UserGamesComponent
+    UserGamesComponent,
+    ListComponent,
+    AddCharacteristicComponent
   ],
   imports: [
     BrowserModule,
