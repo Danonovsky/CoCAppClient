@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserRequest } from '../../models/user/login/userRequest';
 import { UserService } from '../../services/user.service';
 
@@ -8,16 +9,14 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  warning?: String
-  alerts = [];
   user: UserRequest = {
     "email": "",
     "password" : ""
   };
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -28,10 +27,11 @@ export class LoginComponent implements OnInit {
       if(value.status == 200) {
         var token = value.body!.token.toString();
         localStorage.setItem("jwt",token);
+        this.toastr.success('You are now logged in!');
       }
     },
     err => {
-      this.warning = "Ble";
+      this.toastr.error('Invalid credentials.');
     });
   }
 }

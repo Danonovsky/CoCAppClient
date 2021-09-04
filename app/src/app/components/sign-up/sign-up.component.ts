@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { RegisterRequest } from 'src/app/models/user/register/registerRequest';
 import { UserService } from 'src/app/services/user.service';
 
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit {
   };
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -28,10 +30,10 @@ export class SignUpComponent implements OnInit {
     console.log(this.user);
     this.userService.register(this.user).subscribe(
       success => {
-        console.log(success);
+        this.toastr.success('Your account has been created.');
       },
       err => {
-        console.log(err);
+        this.toastr.error('An error occured.');
       }
     )
   }

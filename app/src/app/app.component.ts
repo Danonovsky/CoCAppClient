@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent {
   constructor(
-    public userService: UserService
+    public userService: UserService,
+    private toastr: ToastrService
   ) { }
 
   title = 'app';
 
   logout(): void {
     localStorage.removeItem("jwt");
-    console.log("logged out");
+    this.toastr.success('You have been logged out.');
   }
 }
