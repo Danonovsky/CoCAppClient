@@ -1,10 +1,10 @@
 <div class="container pt-5">
-    <div class="card bg-dark">
+    <div class="card">
         <div class="card-body">
             <h2>Create Game</h2>
             <div class="mb-3">
                 <label class="form-label" for="name">Game Name</label>
-                <input [(ngModel)]="game.name" class="form-control bg-dark text-light" id="name">
+                <input [(ngModel)]="game.name" class="form-control text-light" id="name">
             </div>
             <div class="form-check">
                 <input #private class="form-check-input" type="checkbox" id="private" [checked]="game.private" (change)="changePrivacy(private.checked)">
@@ -13,14 +13,10 @@
                 </label>
               </div>
             <div (click)="create()" class="mb-3">
-                <button class="btn btn-outline-light col-12">
+                <button class="btn btn-outline-primary col-12">
                     Create
                 </button>
             </div>
         </div>
-    </div>
-    <div *ngIf="warning" class="mt-2 alert alert-danger alert-dismissible fade show"> 
-        {{ warning }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>

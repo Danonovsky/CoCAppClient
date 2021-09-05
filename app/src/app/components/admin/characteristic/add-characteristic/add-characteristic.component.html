@@ -1,17 +1,17 @@
 <div class="container pt-5">
-    <div class="card bg-dark">
+    <div class="card">
         <div class="card-body">
             <h2>Add Characteristic</h2>
             <div class="mb-3">
                 <label class="form-label" for="name">Name</label>
-                <input [(ngModel)]="characteristic.name" class="form-control bg-dark text-light" id="name">
+                <input [(ngModel)]="characteristic.name" class="form-control text-light" id="name">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="name">Value</label>
-                <input [(ngModel)]="characteristic.value" class="form-control bg-dark text-light" type="number" id="name">
+                <input [(ngModel)]="characteristic.value" class="form-control text-light" type="number" id="name">
             </div>
             <div (click)="add()" class="mb-3">
-                <button class="btn btn-outline-light col-12">
+                <button class="btn btn-outline-primary col-12">
                     Add
                 </button>
             </div>
