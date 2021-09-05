@@ -21,4 +21,16 @@ export class CharacteristicService {
   add(model: DefaultCharacteristicRequest): Observable<HttpResponse<Boolean>> {
     return this.http.post<Boolean>(this.url, model, { observe: 'response' });
   }
+
+  delete(id: String): Observable<HttpResponse<Boolean>> {
+    return this.http.delete<Boolean>(this.url+id, { observe: 'response' });
+  }
+
+  get(id: String): Observable<HttpResponse<DefaultCharacteristicResponse>> {
+    return this.http.get<DefaultCharacteristicResponse>(this.url+id, { observe: 'response' });
+  }
+
+  update(id: String, model: DefaultCharacteristicRequest): Observable<HttpResponse<Boolean>> {
+    return this.http.put<Boolean>(this.url+id, model, { observe: 'response' });
+  }
 }

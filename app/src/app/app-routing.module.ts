@@ -11,6 +11,7 @@ import { JoinedGamesComponent } from './components/game/joined-games/joined-game
 import { UserGamesComponent } from './components/game/user-games/user-games.component';
 import { ListComponent } from './components/admin/characteristic/list/list.component';
 import { AddCharacteristicComponent } from './components/admin/characteristic/add-characteristic/add-characteristic.component';
+import { EditCharacteristicComponent } from './components/admin/characteristic/edit-characteristic/edit-characteristic.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [RefuseLoggedInGuard] },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "games/create", component: CreateGameComponent, canActivate: [AuthGuard] },
   { path: "games/view/:id", component: ViewComponent, canActivate: [AuthGuard] },
   { path: "admin/characteristics", component: ListComponent, canActivate: [AuthGuard] },
-  { path: "admin/characteristics/add", component: AddCharacteristicComponent, canActivate: [AuthGuard] }
+  { path: "admin/characteristics/add", component: AddCharacteristicComponent, canActivate: [AuthGuard] },
+  { path: "admin/characteristics/edit/:id", component: EditCharacteristicComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { JoinedGamesComponent } from './components/game/joined-games/joined-game
 import { UserGamesComponent } from './components/game/user-games/user-games.component';
 import { ListComponent } from './components/admin/characteristic/list/list.component';
 import { AddCharacteristicComponent } from './components/admin/characteristic/add-characteristic/add-characteristic.component';
+import { EditCharacteristicComponent } from './components/admin/characteristic/edit-characteristic/edit-characteristic.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -38,7 +39,8 @@ export function tokenGetter() {
     JoinedGamesComponent,
     UserGamesComponent,
     ListComponent,
-    AddCharacteristicComponent
+    AddCharacteristicComponent,
+    EditCharacteristicComponent
   ],
   imports: [
     BrowserModule,

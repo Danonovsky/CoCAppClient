@@ -33,5 +33,4 @@ export class AddCharacteristicComponent implements OnInit {
       this.toastr.error('An error occured');
     });
   }
-
 }

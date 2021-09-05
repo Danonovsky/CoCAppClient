@@ -15,9 +15,8 @@
             <tr *ngFor="let item of list">
                 <td>{{item.name}}</td>
                 <td>{{item.value}}</td>
-                <td><a routerLink="details/{{item.id}}" class="btn btn-outline-info">Details</a></td>
                 <td><a routerLink="edit/{{item.id}}" class="btn btn-outline-warning">Edit</a></td>
-                <td><a routerLink="delete/{{item.id}}" class="btn btn-outline-danger">Delete</a></td>
+                <td><button (click)="delete(item.id)" class="btn btn-outline-danger">Delete</button></td>
             </tr>
         </tbody>
     </table>

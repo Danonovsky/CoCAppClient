@@ -23,11 +23,19 @@ export class ListComponent implements OnInit {
 
   getAll() {
      this.service.getAll().subscribe(success => {
-       console.log(success);
        this.list = success.body!;
     }, error => {
       this.toastr.error('An error occured');
-    })
+    });
+  }
+
+  delete(id: String) {
+    this.service.delete(id).subscribe(success => {
+      this.toastr.success('Characteristic successfully deleted.');
+      this.getAll();
+    }, error => {
+      this.toastr.error('An error occured. Characteristic not deleted.');
+    });
   }
 
 }

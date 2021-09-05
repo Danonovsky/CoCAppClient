@@ -1,0 +1,20 @@
+<div class="container pt-5">
+    <div class="card bg-dark" *ngIf="model">
+        <div class="card-body">
+            <h2>Edit</h2>
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input [(ngModel)]="model.name" class="form-control bg-dark text-light" id="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="name">Value</label>
+                <input [(ngModel)]="model.value" class="form-control bg-dark text-light" type="number" id="name">
+            </div>
+            <div (click)="save()" class="mb-3">
+                <button class="btn btn-outline-light col-12">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
