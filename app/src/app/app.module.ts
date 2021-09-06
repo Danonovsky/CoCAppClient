@@ -25,6 +25,10 @@ import { EditCharacteristicComponent } from './components/admin/characteristic/e
 import { ListSkillComponent } from './components/admin/skill/list-skill/list-skill.component';
 import { AddSkillComponent } from './components/admin/skill/add-skill/add-skill.component';
 import { EditSkillComponent } from './components/admin/skill/edit-skill/edit-skill.component';
+import { ItemTypeListComponent } from './components/admin/itemType/item-type-list/item-type-list.component';
+import { ItemTypeAddComponent } from './components/admin/itemType/item-type-add/item-type-add.component';
+import { ItemListComponent } from './components/admin/item/item-list/item-list.component';
+import { ItemAddComponent } from './components/admin/item/item-add/item-add.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -46,7 +50,11 @@ export function tokenGetter() {
     EditCharacteristicComponent,
     ListSkillComponent,
     AddSkillComponent,
-    EditSkillComponent
+    EditSkillComponent,
+    ItemTypeListComponent,
+    ItemTypeAddComponent,
+    ItemListComponent,
+    ItemAddComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { UserListResponse } from "../user/list/UserListResponse";
+import { UserListResponse } from "../user/list/userListResponse";
 
 export interface GameResponse {
     id: String,

@@ -18,7 +18,9 @@ export class UserService {
   ) { }
 
   login(user: UserRequest): Observable<HttpResponse<UserResponse>> {
-    return this.http.post<UserResponse>(this.url+"authenticate", user, { observe: 'response'})
+    var result = this.http.post<UserResponse>(this.url+"authenticate", user, { observe: 'response'});
+    return result;
+
   }
 
   register(user: RegisterRequest): Observable<HttpResponse<Object>> {
@@ -27,5 +29,9 @@ export class UserService {
 
   isLoggedIn() {
     return localStorage.getItem("jwt");
+  }
+
+  getNickname() {
+    return localStorage.getItem("nickname");
   }
 }
