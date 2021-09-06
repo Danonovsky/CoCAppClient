@@ -9,7 +9,7 @@ import { CreateGameComponent } from './components/game/create/create-game.compon
 import { ViewComponent } from './components/game/view/view.component';
 import { JoinedGamesComponent } from './components/game/joined-games/joined-games.component';
 import { UserGamesComponent } from './components/game/user-games/user-games.component';
-import { ListComponent } from './components/admin/characteristic/list/list.component';
+import { ListComponent } from './components/admin/characteristic/list-characteristic/list.component';
 import { AddCharacteristicComponent } from './components/admin/characteristic/add-characteristic/add-characteristic.component';
 import { EditCharacteristicComponent } from './components/admin/characteristic/edit-characteristic/edit-characteristic.component';
 
