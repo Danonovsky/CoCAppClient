@@ -12,6 +12,9 @@ import { UserGamesComponent } from './components/game/user-games/user-games.comp
 import { ListComponent } from './components/admin/characteristic/list-characteristic/list.component';
 import { AddCharacteristicComponent } from './components/admin/characteristic/add-characteristic/add-characteristic.component';
 import { EditCharacteristicComponent } from './components/admin/characteristic/edit-characteristic/edit-characteristic.component';
+import { ListSkillComponent } from './components/admin/skill/list-skill/list-skill.component';
+import { AddSkillComponent } from './components/admin/skill/add-skill/add-skill.component';
+import { EditSkillComponent } from './components/admin/skill/edit-skill/edit-skill.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [RefuseLoggedInGuard] },
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: "games/view/:id", component: ViewComponent, canActivate: [AuthGuard] },
   { path: "admin/characteristics", component: ListComponent, canActivate: [AuthGuard] },
   { path: "admin/characteristics/add", component: AddCharacteristicComponent, canActivate: [AuthGuard] },
-  { path: "admin/characteristics/edit/:id", component: EditCharacteristicComponent, canActivate: [AuthGuard] }
+  { path: "admin/characteristics/edit/:id", component: EditCharacteristicComponent, canActivate: [AuthGuard] },
+  { path: "admin/skills", component: ListSkillComponent, canActivate: [AuthGuard] },
+  { path: "admin/skills/add", component: AddSkillComponent, canActivate: [AuthGuard] },
+  { path: "admin/skills/edit/:id", component: EditSkillComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
