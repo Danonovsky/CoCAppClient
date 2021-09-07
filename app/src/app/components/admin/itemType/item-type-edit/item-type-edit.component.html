@@ -1,0 +1,38 @@
+<div class="container pt-5">
+    <div class="card" *ngIf="itemType">
+        <div class="card-body">
+            <h2>Item Type</h2>
+            <div class="mb-3">
+                <p>Name: {{itemType.name}} </p>
+            </div>
+
+            <h3>Attributes</h3>
+            <div class="row mb-3" *ngFor="let item of itemTypeAttributes">
+                <label class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-9">
+                    <input value="{{item.name}}" class="form-control" disabled>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-outline-danger" (click)="deleteAttribute(item.id)">X</button>
+                </div>
+            </div>
+
+            <h3>New Attribute</h3>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-9">
+                    <input class="form-control text-light" [(ngModel)]="model.name">
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-outline-info" (click)="addAttribute()">+</button>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-outline-primary col-12">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
