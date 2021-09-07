@@ -29,11 +29,15 @@ export class ViewComponent implements OnInit {
       this.toastr.error('No game found with given ID.');
       this.router.navigate(['/games']);
     }
-    this.gameService.get(id!).subscribe(success => {
-      console.log(success.body);
-    }, error => {
-      this.router.navigate(['/games']);
-    });
+    else {
+      this.gameService.get(id).subscribe(success => {
+        this.game = success.body!;
+        console.log(success.body);
+      }, error => {
+        this.router.navigate(['/games']);
+      });
+    }
+    
   }
 
   join(): void {

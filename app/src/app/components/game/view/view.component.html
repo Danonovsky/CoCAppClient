@@ -1,7 +1,11 @@
-<div class="container">
-    <p>view works!</p>
+<div class="container" *ngIf="game">
+    <h2>{{game.name}}</h2>
 
-    <button class="btn btn-outline-primary" (click)="join()">
+    <button class="btn btn-outline-primary" (click)="join()" *ngIf="!game.isOwner">
         Join game!
     </button>
+
+    <div *ngIf="game.isOwner">
+        <h3>Management</h3>
+    </div>
 </div>
