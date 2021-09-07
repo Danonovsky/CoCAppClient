@@ -1,1 +1,26 @@
-<p>item-add works!</p>
+<div class="container pt-5">
+    <div class="card">
+        <div class="card-body">
+            <h2>Add Item</h2>
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input [(ngModel)]="item.name" class="form-control text-light" id="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="itemType">Item Type</label>
+                <select [ngModel]="item.itemTypeId" (ngModelChange)="onItemTypeChange($event)" class="form-select text-light" id="itemType">
+                    <option *ngFor="let i of itemTypes"[ngValue]="i.id">{{i.name}}</option>
+                  </select>
+            </div>
+            <div class="mb-3" *ngFor="let attribute of itemMiddlewares">
+                <label class="form-label" for="{{attribute.name}}">{{attribute.name}}</label>
+                <input class="form-control text-light" id="{{attribute.name}}" [(ngModel)]="attribute.value">
+            </div>
+            <div (click)="add()" class="mb-3">
+                <button class="btn btn-outline-primary col-12">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container pt-5">
+    <div class="card" *ngIf="model">
+        <div class="card-body">
+            <h2>Item</h2>
+            <div class="mb-3 row">
+                <div class="col-3">Name</div>
+                <div class="col-9">{{model.name}}</div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-3">Type</div>
+                <div class="col-9">{{model.itemTypeName}}</div>
+            </div>
+            <div class="mb-3 row" *ngFor="let i of model.itemAttributeValues">
+                <div class="col-3">{{i.attributeName}}</div>
+                <div class="col-9">{{i.attributeValue}}</div>
+            </div>
+        </div>
+    </div>
+</div>

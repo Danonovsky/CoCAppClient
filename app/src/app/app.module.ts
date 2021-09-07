@@ -30,6 +30,7 @@ import { ItemTypeAddComponent } from './components/admin/itemType/item-type-add/
 import { ItemListComponent } from './components/admin/item/item-list/item-list.component';
 import { ItemAddComponent } from './components/admin/item/item-add/item-add.component';
 import { ItemTypeEditComponent } from './components/admin/itemType/item-type-edit/item-type-edit.component';
+import { ItemDetailsComponent } from './components/admin/item/item-details/item-details.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -56,7 +57,8 @@ export function tokenGetter() {
     ItemTypeAddComponent,
     ItemListComponent,
     ItemAddComponent,
-    ItemTypeEditComponent
+    ItemTypeEditComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,
