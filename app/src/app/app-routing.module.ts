@@ -21,6 +21,7 @@ import { ItemListComponent } from './components/admin/item/item-list/item-list.c
 import { ItemAddComponent } from './components/admin/item/item-add/item-add.component';
 import { ItemTypeEditComponent } from './components/admin/itemType/item-type-edit/item-type-edit.component';
 import { ItemDetailsComponent } from './components/admin/item/item-details/item-details.component';
+import { AddCharacterComponent } from './components/management/add-character/add-character.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [RefuseLoggedInGuard] },
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: "admin/item-types/edit/:id", component: ItemTypeEditComponent, canActivate: [AuthGuard] },
   { path: "admin/items", component: ItemListComponent, canActivate: [AuthGuard] },
   { path: "admin/items/add", component: ItemAddComponent, canActivate: [AuthGuard] },
-  { path: "admin/items/details/:id", component: ItemDetailsComponent, canActivate: [AuthGuard] }
+  { path: "admin/items/details/:id", component: ItemDetailsComponent, canActivate: [AuthGuard] },
+  { path: "management/edit-character", component: AddCharacterComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

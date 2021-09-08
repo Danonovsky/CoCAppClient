@@ -1,6 +1,8 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { RollRequest } from '../models/roll/rollRequest';
+import { RollResponse } from '../models/roll/rollResponse';
 import { DefaultSkillRequest } from '../models/skill/defaultSkillRequest';
 import { DefaultSkillResponse } from '../models/skill/defaultSkillResponse';
 
@@ -9,6 +11,7 @@ import { DefaultSkillResponse } from '../models/skill/defaultSkillResponse';
 })
 export class SkillService {
   private url = "http://localhost:5000/admin/skill/";
+  private urlRoll = "http://localhost:5000/roll/";
 
   constructor(
     private http: HttpClient
@@ -32,5 +35,9 @@ export class SkillService {
 
   update(id: String, model: DefaultSkillRequest): Observable<HttpResponse<Boolean>> {
     return this.http.put<Boolean>(this.url+id, model, { observe: 'response' });
+  }
+
+  getRoll(roll: RollRequest): Observable<HttpResponse<RollResponse>> {
+    return this.http.post<RollResponse>(this.urlRoll, roll, { observe: 'response'});
   }
 }
