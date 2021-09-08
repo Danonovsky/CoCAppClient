@@ -6,6 +6,6 @@
     </button>
 
     <div *ngIf="game.isOwner">
-        <h3>Management</h3>
+        <a class="btn btn-outline-success" routerLink="/game/{{game.id}}">Manage</a>
     </div>
 </div>

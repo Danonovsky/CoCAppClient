@@ -32,6 +32,7 @@ import { ItemAddComponent } from './components/admin/item/item-add/item-add.comp
 import { ItemTypeEditComponent } from './components/admin/itemType/item-type-edit/item-type-edit.component';
 import { ItemDetailsComponent } from './components/admin/item/item-details/item-details.component';
 import { AddCharacterComponent } from './components/management/add-character/add-character.component';
+import { ManagementComponent } from './components/game/management/management.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -60,7 +61,8 @@ export function tokenGetter() {
     ItemAddComponent,
     ItemTypeEditComponent,
     ItemDetailsComponent,
-    AddCharacterComponent
+    AddCharacterComponent,
+    ManagementComponent
   ],
   imports: [
     BrowserModule,
