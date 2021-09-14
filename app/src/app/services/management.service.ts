@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CharacterRequest } from '../models/character/characterRequest';
 import { CharacterResponse } from '../models/character/characterResponse';
+import { LocationRequest } from '../models/location/locationRequest';
+import { LocationResponse } from '../models/location/locationResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +27,17 @@ export class ManagementService {
 
   deleteCharacter(id: string): Observable<HttpResponse<boolean>> {
     return this.http.delete<boolean>(this.url+"character/"+id, { observe: 'response' });
+  }
+
+  addLocation(request: LocationRequest): Observable<HttpResponse<boolean>> {
+    return this.http.post<boolean>(this.url+"location", request, { observe: 'response' });
+  }
+
+  getAllLocations(id: string): Observable<HttpResponse<LocationResponse[]>> {
+    return this.http.get<LocationResponse[]>(this.url+"location/all/"+id, { observe: 'response' });
+  }
+
+  deleteLocation(id: string): Observable<HttpResponse<boolean>> {
+    return this.http.delete<boolean>(this.url+"location/"+id, { observe: 'response' });
   }
 }

@@ -1,0 +1,39 @@
+<app-nav page="locations"></app-nav>
+<app-location-add (newItemEvent)="getLocations()"></app-location-add>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-4 mb-4" *ngFor="let location of locations">
+            <div class="card me-auto ms-auto" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{location.name}}</h5>
+                  <div class="row">
+                    <div class="col-6">
+                      <button class="btn btn-outline-info col-12" data-bs-toggle="modal" data-bs-target="#detailsModal" (click)="setDetails(location.id)">Details</button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-outline-danger col-12" (click)="delete(location.id)">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detailsModalLabel">Location</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          Name: {{details.name}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light col-12" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

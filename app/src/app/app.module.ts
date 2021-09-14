@@ -35,6 +35,8 @@ import { AddCharacterComponent } from './components/management/character/add-cha
 import { HomeComponent } from './components/management/home/home.component';
 import { CharacterManagementComponent } from './components/management/character/character-management/character-management.component';
 import { NavComponent } from './components/management/nav/nav.component';
+import { LocationListComponent } from './components/management/location/location-list/location-list.component';
+import { LocationAddComponent } from './components/management/location/location-add/location-add.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -66,7 +68,9 @@ export function tokenGetter() {
     AddCharacterComponent,
     HomeComponent,
     CharacterManagementComponent,
-    NavComponent
+    NavComponent,
+    LocationListComponent,
+    LocationAddComponent
   ],
   imports: [
     BrowserModule,
