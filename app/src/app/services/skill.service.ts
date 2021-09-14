@@ -40,4 +40,8 @@ export class SkillService {
   getRoll(roll: RollRequest): Observable<HttpResponse<RollResponse>> {
     return this.http.post<RollResponse>(this.urlRoll, roll, { observe: 'response'});
   }
+
+  getRolls(rolls: RollRequest[]): Observable<HttpResponse<RollResponse[]>> {
+    return this.http.post<RollResponse[]>(this.urlRoll+"many", rolls, { observe: 'response'});
+  }
 }

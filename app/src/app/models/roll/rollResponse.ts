@@ -1,4 +1,4 @@
 export interface RollResponse {
-    values: Number[],
-    summary: Number
+    values: number[],
+    summary: number
 }
