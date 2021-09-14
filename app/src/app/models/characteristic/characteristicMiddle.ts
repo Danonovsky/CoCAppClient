@@ -1,6 +1,6 @@
 export interface CharacteristicMiddle {
-    defaultCharacteristicId: String,
-    name: String,
+    defaultCharacteristicId: string,
+    name: string,
     value: number,
     advancement: number
 }

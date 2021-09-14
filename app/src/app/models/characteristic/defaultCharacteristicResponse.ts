@@ -1,5 +1,5 @@
 export interface DefaultCharacteristicResponse {
-    id: String,
-    name: String,
+    id: string,
+    name: string,
     value: number
 }

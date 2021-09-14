@@ -4,5 +4,6 @@ export interface CharacterRequest {
     gender: string,
     firstName: string,
     lastName: string,
-    characteristics: CharacteristicRequest[]
+    characteristics: CharacteristicRequest[],
+    gameId: string
 }
