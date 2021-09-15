@@ -24,6 +24,7 @@ import { ItemDetailsComponent } from './components/admin/item/item-details/item-
 import { HomeComponent } from './components/management/home/home.component';
 import { CharacterManagementComponent } from './components/management/character/character-management/character-management.component';
 import { LocationListComponent } from './components/management/location/location-list/location-list.component';
+import { NotesListComponent } from './components/management/notes/notes-list/notes-list.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [RefuseLoggedInGuard] },
@@ -47,7 +48,8 @@ const routes: Routes = [
   { path: "admin/items/details/:id", component: ItemDetailsComponent, canActivate: [AuthGuard] },
   { path: "game/:id", component: HomeComponent, canActivate:[AuthGuard] },
   { path: "game/:id/characters", component: CharacterManagementComponent, canActivate:[AuthGuard] },
-  { path: "game/:id/locations", component: LocationListComponent, canActivate:[AuthGuard] }
+  { path: "game/:id/locations", component: LocationListComponent, canActivate:[AuthGuard] },
+  { path: "game/:id/notes", component: NotesListComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

@@ -1,0 +1,19 @@
+<app-nav page="notes"></app-nav>
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-4 mb-4" *ngFor="let note of notes">
+        <div class="card me-auto ms-auto bg-warning bg-gradient text-secondary shadow">
+          <div class="card-body">
+            <h5 class="card-title">{{note.content}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">From: {{note.location}}</h6>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-outline-danger col-12" (click)="delete(note.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -39,6 +39,7 @@ import { LocationListComponent } from './components/management/location/location
 import { LocationAddComponent } from './components/management/location/location-add/location-add.component';
 import { NotesComponent } from './components/management/location/notes/notes.component';
 import { ItemsComponent } from './components/management/location/items/items.component';
+import { NotesListComponent } from './components/management/notes/notes-list/notes-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -74,7 +75,8 @@ export function tokenGetter() {
     LocationListComponent,
     LocationAddComponent,
     NotesComponent,
-    ItemsComponent
+    ItemsComponent,
+    NotesListComponent
   ],
   imports: [
     BrowserModule,

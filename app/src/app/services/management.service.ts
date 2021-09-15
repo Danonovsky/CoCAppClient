@@ -8,6 +8,7 @@ import { LocationItemRequest } from '../models/item/locationItemRequest';
 import { LocationItemResponse } from '../models/item/locationItemResponse';
 import { LocationRequest } from '../models/location/locationRequest';
 import { LocationResponse } from '../models/location/locationResponse';
+import { NoteListResponse } from '../models/note/noteListResponse';
 import { NoteRequest } from '../models/note/noteRequest';
 import { NoteResponse } from '../models/note/noteResponse';
 
@@ -68,5 +69,9 @@ export class ManagementService {
 
   deleteItemFromLocation(id: string): Observable<HttpResponse<boolean>> {
     return this.http.delete<boolean>(this.url+"location/item/"+id, { observe: 'response' });
+  }
+
+  getAllNotes(id: string): Observable<HttpResponse<NoteListResponse[]>> {
+    return this.http.get<NoteListResponse[]>(this.url+"notes/"+id, { observe: 'response' });
   }
 }
