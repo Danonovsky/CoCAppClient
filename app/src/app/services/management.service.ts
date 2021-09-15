@@ -5,6 +5,8 @@ import { CharacterRequest } from '../models/character/characterRequest';
 import { CharacterResponse } from '../models/character/characterResponse';
 import { LocationRequest } from '../models/location/locationRequest';
 import { LocationResponse } from '../models/location/locationResponse';
+import { NoteRequest } from '../models/note/noteRequest';
+import { NoteResponse } from '../models/note/noteResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +41,17 @@ export class ManagementService {
 
   deleteLocation(id: string): Observable<HttpResponse<boolean>> {
     return this.http.delete<boolean>(this.url+"location/"+id, { observe: 'response' });
+  }
+
+  addNoteToLocation(request: NoteRequest): Observable<HttpResponse<boolean>> {
+    return this.http.post<boolean>(this.url+"location/note", request, { observe: 'response' });
+  }
+
+  getAllNotesFromLocation(id: string): Observable<HttpResponse<NoteResponse[]>> {
+    return this.http.get<NoteResponse[]>(this.url+"location/note/all/"+id, { observe: 'response' });
+  }
+
+  deleteNoteFromLocation(id: string): Observable<HttpResponse<boolean>> {
+    return this.http.delete<boolean>(this.url+"location/note/"+id, { observe: 'response' });
   }
 }
