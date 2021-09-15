@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { NoteListResponse } from 'src/app/models/note/noteListResponse';
+import { PlayerResponse } from 'src/app/models/game/playerResponse';
 import { ManagementService } from 'src/app/services/management.service';
 
 @Component({
-  selector: 'app-notes-list',
-  templateUrl: './notes-list.component.html',
-  styleUrls: ['./notes-list.component.css']
+  selector: 'app-players-list',
+  templateUrl: './players-list.component.html',
+  styleUrls: ['./players-list.component.css']
 })
-export class NotesListComponent implements OnInit {
-  notes: NoteListResponse[] = [];
+export class PlayersListComponent implements OnInit {
+
+  players: PlayerResponse[] = [];
   gameId: string = '';
 
   constructor(
@@ -32,18 +33,9 @@ export class NotesListComponent implements OnInit {
   }
 
   getAll() {
-    this.managementService.getAllNotes(this.gameId).subscribe(_ => {
+    this.managementService.getAllPlayers(this.gameId).subscribe(_ => {
       console.log(_.body);
-      this.notes = _.body!;
-    });
-  }
-
-  delete(id: string) {
-    this.managementService.deleteNoteFromLocation(id).subscribe(success => {
-      this.toastr.success("Note deleted successfully.");
-      this.getAll();
-    }, _ => {
-      this.toastr.error("An error occured. Note not deleted.");
+      this.players = _.body!;
     });
   }
 }

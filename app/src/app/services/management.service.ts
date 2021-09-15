@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CharacterRequest } from '../models/character/characterRequest';
 import { CharacterResponse } from '../models/character/characterResponse';
+import { PlayerResponse } from '../models/game/playerResponse';
 import { ItemResponse } from '../models/item/itemResponse';
 import { LocationItemRequest } from '../models/item/locationItemRequest';
 import { LocationItemResponse } from '../models/item/locationItemResponse';
@@ -73,5 +74,9 @@ export class ManagementService {
 
   getAllNotes(id: string): Observable<HttpResponse<NoteListResponse[]>> {
     return this.http.get<NoteListResponse[]>(this.url+"notes/"+id, { observe: 'response' });
+  }
+
+  getAllPlayers(id: string): Observable<HttpResponse<PlayerResponse[]>> {
+    return this.http.get<PlayerResponse[]>(this.url+"players/"+id, { observe: 'response' });
   }
 }

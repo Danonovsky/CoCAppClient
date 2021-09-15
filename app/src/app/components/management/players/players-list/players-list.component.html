@@ -1,0 +1,13 @@
+<app-nav page="players"></app-nav>
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-4 mb-4" *ngFor="let player of players">
+        <div class="card me-auto ms-auto bg-gradient shadow">
+          <div class="card-body">
+            <h5 class="card-title">{{player.nickname}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
