@@ -1,8 +1,8 @@
 import { ItemAttributeValueResponse } from "./itemAttributeValueResponse";
 
 export interface ItemResponse {
-    id: String,
-    name: String,
-    itemTypeName: String,
+    id: string,
+    name: string,
+    itemTypeName: string,
     itemAttributeValues: ItemAttributeValueResponse[]
 }

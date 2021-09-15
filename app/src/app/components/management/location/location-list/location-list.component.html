@@ -31,6 +31,7 @@
       <div class="modal-body">
           Name: {{details.name}}
           <app-notes *ngIf="details.id" id="{{details.id}}"></app-notes>
+          <app-items *ngIf="details.id" id="{{details.id}}"></app-items>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light col-12" data-bs-dismiss="modal">Close</button>

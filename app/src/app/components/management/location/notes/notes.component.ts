@@ -49,7 +49,6 @@ export class NotesComponent implements OnInit, OnChanges {
   }
 
   delete(id: string) {
-    console.log(id);
     this.managementService.deleteNoteFromLocation(id).subscribe(_ => {
       this.toastr.success('Note deleted!');
       this.getAll();

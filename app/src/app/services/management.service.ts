@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CharacterRequest } from '../models/character/characterRequest';
 import { CharacterResponse } from '../models/character/characterResponse';
+import { ItemResponse } from '../models/item/itemResponse';
+import { LocationItemRequest } from '../models/item/locationItemRequest';
+import { LocationItemResponse } from '../models/item/locationItemResponse';
 import { LocationRequest } from '../models/location/locationRequest';
 import { LocationResponse } from '../models/location/locationResponse';
 import { NoteRequest } from '../models/note/noteRequest';
@@ -53,5 +56,17 @@ export class ManagementService {
 
   deleteNoteFromLocation(id: string): Observable<HttpResponse<boolean>> {
     return this.http.delete<boolean>(this.url+"location/note/"+id, { observe: 'response' });
+  }
+
+  addItemToLocation(request: LocationItemRequest): Observable<HttpResponse<boolean>> {
+    return this.http.post<boolean>(this.url+"location/item", request, { observe: 'response' });
+  }
+
+  getAllItemsFromLocation(id: string): Observable<HttpResponse<LocationItemResponse[]>> {
+    return this.http.get<LocationItemResponse[]>(this.url+"location/item/all/"+id, { observe: 'response' });
+  }
+
+  deleteItemFromLocation(id: string): Observable<HttpResponse<boolean>> {
+    return this.http.delete<boolean>(this.url+"location/item/"+id, { observe: 'response' });
   }
 }

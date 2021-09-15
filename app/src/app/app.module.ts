@@ -38,6 +38,7 @@ import { NavComponent } from './components/management/nav/nav.component';
 import { LocationListComponent } from './components/management/location/location-list/location-list.component';
 import { LocationAddComponent } from './components/management/location/location-add/location-add.component';
 import { NotesComponent } from './components/management/location/notes/notes.component';
+import { ItemsComponent } from './components/management/location/items/items.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -72,7 +73,8 @@ export function tokenGetter() {
     NavComponent,
     LocationListComponent,
     LocationAddComponent,
-    NotesComponent
+    NotesComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
