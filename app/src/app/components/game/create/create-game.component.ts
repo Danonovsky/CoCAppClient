@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { GameCreateRequest } from 'src/app/models/game/gameCreateRequest';
 import { GameService } from 'src/app/services/game.service';
 
@@ -18,19 +19,20 @@ export class CreateGameComponent implements OnInit {
 
   constructor(
     private service: GameService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
   }
 
   create(): void {
-    this.service.create(this.game).subscribe(success => {
-      console.log("Created!");
+    this.service.create(this.game).subscribe(_ => {
+      this.toastr.success('Game created!');
       this.router.navigate(["games"]);
     },
-    err => {
-
+    _ => {
+      this.toastr.error('An error occured');
     })
   }
 

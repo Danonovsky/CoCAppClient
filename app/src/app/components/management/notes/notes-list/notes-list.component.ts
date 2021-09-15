@@ -33,7 +33,6 @@ export class NotesListComponent implements OnInit {
 
   getAll() {
     this.managementService.getAllNotes(this.gameId).subscribe(_ => {
-      console.log(_.body);
       this.notes = _.body!;
     });
   }

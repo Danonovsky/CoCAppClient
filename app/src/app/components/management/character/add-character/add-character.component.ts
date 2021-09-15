@@ -114,7 +114,6 @@ export class AddCharacterComponent implements OnInit {
         value: e.value
       });
     });
-    console.log(this.character);
     this.managementService.addCharacter(this.character).subscribe(_ => {
       this.newItemEvent.emit();
     }, _ => {

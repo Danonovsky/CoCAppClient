@@ -56,7 +56,6 @@ export class ItemsComponent implements OnInit {
 
   add() {
     this.request.locationId = this.id;
-    console.log(this.request);
     this.managementService.addItemToLocation(this.request).subscribe(_ => {
       this.toastr.success('Item added to location.');
       this.getAll();

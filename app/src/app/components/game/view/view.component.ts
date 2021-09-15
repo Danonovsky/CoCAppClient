@@ -32,7 +32,6 @@ export class ViewComponent implements OnInit {
     else {
       this.gameService.get(id).subscribe(success => {
         this.game = success.body!;
-        console.log(success.body);
       }, error => {
         this.router.navigate(['/games']);
       });

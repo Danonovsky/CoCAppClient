@@ -22,10 +22,6 @@ export class JoinedGamesComponent implements OnInit {
   loadGames(): void {
     this.gameService.getJoinedGames().subscribe(success => {
       this.games = success.body!;
-      console.log(this.games);
-    },
-    err => {
-      console.log("error");
     });
   }
 

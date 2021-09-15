@@ -34,7 +34,6 @@ export class PlayersListComponent implements OnInit {
 
   getAll() {
     this.managementService.getAllPlayers(this.gameId).subscribe(_ => {
-      console.log(_.body);
       this.players = _.body!;
     });
   }

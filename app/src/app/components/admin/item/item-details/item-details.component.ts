@@ -28,7 +28,6 @@ export class ItemDetailsComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id') as String;
     this.service.getItem(this.id).subscribe(success => {
       this.model = success.body!;
-      console.log(this.model);
     }, error => {
       this.toastr.error('An item with given ID not found');
       this.router.navigate(["admin/items"]);
