@@ -7,6 +7,7 @@
       <div class="card me-auto ms-auto" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{location.name}}</h5>
+          <img class="img-fluid mb-2" src="http://localhost:5000/{{location.image}}">
           <div class="row">
             <div class="col-6">
               <button class="btn btn-outline-info col-12" data-bs-toggle="modal" data-bs-target="#detailsModal" (click)="setDetails(location.id)">Details</button>
@@ -29,9 +30,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          Name: {{details.name}}
-          <app-notes *ngIf="details.id" id="{{details.id}}"></app-notes>
-          <app-items *ngIf="details.id" id="{{details.id}}"></app-items>
+        <p>Name: {{details.name}}</p>
+        <img class="img-fluid" src="http://localhost:5000/{{details.image}}">
+        <app-notes *ngIf="details.id" id="{{details.id}}"></app-notes>
+        <app-items *ngIf="details.id" id="{{details.id}}"></app-items>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light col-12" data-bs-dismiss="modal">Close</button>

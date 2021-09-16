@@ -1,4 +1,5 @@
 export interface LocationRequest {
     name: string,
-    gameId: string
+    gameId: string,
+    image: string
 }

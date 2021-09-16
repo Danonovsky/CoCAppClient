@@ -11,9 +11,11 @@ import { ManagementService } from 'src/app/services/management.service';
 })
 export class LocationAddComponent implements OnInit {
 
+  fileToUpload: File | null = null;
   location: LocationRequest = {
     name: '',
-    gameId: ''
+    gameId: '',
+    image: ''
   };
 
   @Output() newItemEvent = new EventEmitter();
@@ -38,11 +40,24 @@ export class LocationAddComponent implements OnInit {
     this.location.name = '';
   }
 
+  handleFileInput(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if(fileList) {
+      this.fileToUpload = fileList.item(0);
+      console.log(this.fileToUpload);
+    }
+  }
+
   add() {
-    this.managementService.addLocation(this.location).subscribe(_ => {
-      this.newItemEvent.emit();
-    }, _ => {
-      this.toastr.error("An error occured. Location not added.");
+    this.managementService.addImage(this.fileToUpload!).subscribe(_ => {
+      console.log(_.body?.dbPath);
+      this.location.image = _.body!.dbPath;
+      this.managementService.addLocation(this.location).subscribe(_ => {
+        this.newItemEvent.emit();
+      }, _ => {
+        this.toastr.error("An error occured. Location not added.");
+      });
     });
   }
 

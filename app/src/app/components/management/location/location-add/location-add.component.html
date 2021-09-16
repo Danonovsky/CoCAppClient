@@ -19,6 +19,10 @@
                         <label class="form-label" for="name">First Name</label>
                         <input [(ngModel)]="location.name" class="form-control text-light" id="name">
                     </div>
+                    <div class="mb-2">
+                        <label class="form-label" for="image">Image</label>
+                        <input class="form-control" type="file" id="image" (change)="handleFileInput($event)">
+                    </div>
 
                 </div>
                 <div class="p-3">

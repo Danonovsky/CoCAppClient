@@ -16,7 +16,8 @@ export class LocationListComponent implements OnInit {
   details: LocationResponse = {
     id: '',
     name: '',
-    gameId: ''
+    gameId: '',
+    image: ''
   };
 
   constructor(
