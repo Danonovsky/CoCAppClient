@@ -5,5 +5,6 @@ export interface CharacterRequest {
     firstName: string,
     lastName: string,
     characteristics: CharacteristicRequest[],
-    gameId: string
+    gameId: string,
+    image: string
 }

@@ -7,7 +7,8 @@
             <div class="card me-auto ms-auto" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{character.firstName+ " "+character.lastName}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{character.gender}}</h6>
+                  <img class="img-fluid" src="http://localhost:5000/{{character.image}}">
+                  <h6 class="card-subtitle mb-2 mt-2 text-muted">{{character.gender}}</h6>
                   <div class="row">
                     <div class="col-6">
                       <button class="btn btn-outline-info col-12" data-bs-toggle="modal" data-bs-target="#detailsModal" (click)="setDetails(character.id)">Details</button>
@@ -30,6 +31,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <img class="img-fluid mb-2" src="http://localhost:5000/{{details.image}}">
         <p>Gender: {{details.gender}}</p>
         <h2>Characteristics</h2>
         <div class="row">

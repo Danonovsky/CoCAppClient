@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CharacterRequest } from '../models/character/characterRequest';
 import { CharacterResponse } from '../models/character/characterResponse';
 import { PlayerResponse } from '../models/game/playerResponse';
+import { ImageResponse } from '../models/image/imageResponse';
 import { ItemResponse } from '../models/item/itemResponse';
 import { LocationItemRequest } from '../models/item/locationItemRequest';
 import { LocationItemResponse } from '../models/item/locationItemResponse';
@@ -23,6 +24,12 @@ export class ManagementService {
   constructor(
     private http: HttpClient
   ) { }
+
+  addImage(file: File): Observable<HttpResponse<ImageResponse>> {
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http.post<ImageResponse>(this.url+"image", formData, { observe: 'response' });
+  }
 
   addCharacter(request: CharacterRequest): Observable<HttpResponse<boolean>> {
     return this.http.post<boolean>(this.url+"character", request, { observe: 'response' });

@@ -14,14 +14,15 @@ import { SkillService } from 'src/app/services/skill.service';
   styleUrls: ['./add-character.component.css']
 })
 export class AddCharacterComponent implements OnInit {
-
+  fileToUpload: File | null = null;
   gameId: string = '';
   character: CharacterRequest = {
     gender: "",
     firstName: "",
     lastName: "",
     characteristics: [],
-    gameId: ''
+    gameId: '',
+    image: ''
   };
   characteristics: CharacteristicMiddle[] = [];
   rollRequest: RollRequest = {
@@ -67,7 +68,15 @@ export class AddCharacterComponent implements OnInit {
         });
       });
     });
+  }
 
+  handleFileInput(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if(fileList) {
+      this.fileToUpload = fileList.item(0);
+      console.log(this.fileToUpload);
+    }
   }
 
   onGenderChange(value: string) {
@@ -114,11 +123,16 @@ export class AddCharacterComponent implements OnInit {
         value: e.value
       });
     });
-    this.managementService.addCharacter(this.character).subscribe(_ => {
-      this.newItemEvent.emit();
-    }, _ => {
-      this.toastr.error("An error occured. Character not added.");
+    this.managementService.addImage(this.fileToUpload!).subscribe(_ => {
+      console.log(_.body?.dbPath);
+      this.character.image = _.body!.dbPath;
+      this.managementService.addCharacter(this.character).subscribe(_ => {
+        this.newItemEvent.emit();
+      }, _ => {
+        this.toastr.error("An error occured. Character not added.");
+      });
     });
+    
   }
 
 }

@@ -18,7 +18,8 @@ export class CharacterManagementComponent implements OnInit {
     characteristics: [],
     gender: '',
     lastName: '',
-    id: ''
+    id: '',
+    image: ''
   };
 
   constructor(

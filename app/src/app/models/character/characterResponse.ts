@@ -5,5 +5,6 @@ export interface CharacterResponse {
     gender: string,
     firstName: string,
     lastName: string,
+    image: string,
     characteristics: CharacteristicResponse[]
 }
