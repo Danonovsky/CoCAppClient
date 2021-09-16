@@ -33,6 +33,7 @@ export class NotesComponent implements OnInit, OnChanges {
   }
 
   getAll() {
+    this.request.content = '';
     this.managementService.getAllNotesFromLocation(this.id).subscribe(success => {
       this.notes = success.body!;
     });
